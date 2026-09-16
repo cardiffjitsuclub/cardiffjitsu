@@ -1,0 +1,14 @@
+# Downloaded dependencies
+node_modules/
+
+# Generated website and Astro files
+dist/
+.astro/
+
+# macOS files
+.DS_Store
+
+# Local environment settings
+.env
+.env.*
+!.env.example

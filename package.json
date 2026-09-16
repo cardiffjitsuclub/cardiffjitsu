@@ -1,0 +1,29 @@
+{
+  "name": "cardiffjitsu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cardiffjitsuclub/cardiffjitsu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/cardiffjitsuclub/cardiffjitsu/issues"
+  },
+  "homepage": "https://github.com/cardiffjitsuclub/cardiffjitsu#readme",
+  "dependencies": {
+    "astro": "^7.3.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
