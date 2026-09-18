@@ -1,0 +1,70 @@
+---
+import SiteLayout from './SiteLayout.astro';
+
+interface Props {
+  name: string;
+  subtitle?: string;
+  description?: string;
+  heroImage?: string;
+  when?: string[];
+  where?: string;
+  contacts?: { label: string; href: string; newTab?: boolean }[];
+}
+
+const {
+  name,
+  subtitle = 'Japanese Jiu Jitsu in Wales',
+  description = `Jiu Jitsu training times, location and contact information for ${name}.`,
+  heroImage,
+  when,
+  where,
+  contacts = [],
+} = Astro.props;
+---
+
+<SiteLayout
+  title={`${name} | Jitsu Wales`}
+  heading={name}
+  subtitle={subtitle}
+  description={description}
+  heroImage={heroImage}
+>
+  <slot name="intro" />
+
+  <div class="grid">
+    <section class="card">
+      <h2>When</h2>
+      {when?.length ? (
+        <ul>{when.map((session) => <li>{session}</li>)}</ul>
+      ) : (
+        <p>Training times coming soon.</p>
+      )}
+    </section>
+    <section class="card">
+      <h2>Where</h2>
+      <p>{where || 'Training location coming soon.'}</p>
+    </section>
+  </div>
+
+  <slot name="after-details" />
+  <slot name="before-contact" />
+
+  <section class="section card" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Us</h2>
+    {contacts.length > 0 ? (
+      <div class="links">
+        {contacts.map((contact) => (
+          <a
+            href={contact.href}
+            target={contact.newTab ? '_blank' : undefined}
+            rel={contact.newTab ? 'noopener noreferrer' : undefined}
+          >{contact.label}</a>
+        ))}
+      </div>
+    ) : (
+      <p>Email and social media links coming soon.</p>
+    )}
+  </section>
+
+  <slot />
+</SiteLayout>
