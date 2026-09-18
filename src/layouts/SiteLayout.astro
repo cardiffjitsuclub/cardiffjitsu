@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  heading: string;
+  description: string;
+  subtitle?: string;
+  heroImage?: string;
+}
+const { title, heading, description, subtitle, heroImage = '/image.jpg' } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="brand" href="/">Jitsu Wales</a>
+        <div class="nav-links">
+          <a href="/" aria-current={pathname === '/' ? 'page' : undefined}>Home</a>
+          <a href="/#clubs">Find a club</a>
+          <a href="/events/" aria-current={pathname === '/events/' ? 'page' : undefined}>Events</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="hero" style={{ '--hero-image': `url("${heroImage}")` }} aria-labelledby="page-heading">
+        <div class="hero-content">
+          <h1 id="page-heading">{heading}</h1>
+          {subtitle && <p>{subtitle}</p>}
+        </div>
+      </section>
+      <div class="container"><slot /></div>
+    </main>
+    <footer>
+      <p>Jitsu Wales · Japanese Jiu Jitsu</p>
+      <a href="https://www.jitsufoundation.org">The Jiu Jitsu Foundation</a>
+    </footer>
+  </body>
+</html>
