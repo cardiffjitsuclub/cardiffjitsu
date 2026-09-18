@@ -40,8 +40,12 @@ Run the build again after making further changes.
 
 ## Project structure
 
-- src/pages/index.astro — home page
+- src/pages/index.astro — Wales home page and club directory
+- src/pages/clubs/cardiff/index.astro — Cardiff City club page
 - src/pages/events/index.astro — events page
+- src/layouts/SiteLayout.astro — shared page structure, navigation and footer
+- src/styles/global.css — shared styling
+- src/data/clubs.ts — club directory; add a href when a club page is ready
 - public/ — images and other files copied into the published site
 - public/CNAME — custom domain
 - astro.config.mjs — Astro configuration

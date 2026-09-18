@@ -1,239 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jitsu Cardiff</title>
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { clubs } from '../data/clubs';
+---
 
-<style>
-:root {
-  --accent: #b91c1c;
-  --bg: #f8fafc;
-  --card: #ffffff;
-  --text: #0f172a;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.hero {
-  position: relative;
-  height: 50vh;
-  min-height: 320px;
-  background: url('image.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.lead {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.card {
-  background: var(--card);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  padding: 20px;
-}
-
-.card h2 {
-  margin-top: 0;
-}
-
-iframe {
-  width: 100%;
-  height: 360px;
-  border: 0;
-  border-radius: 10px;
-}
-
-.links {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.links a {
-  display: inline-block;
-  margin: 6px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-  background: var(--accent);
-  color: white;
-  font-weight: 500;
-}
-
-footer {
-  text-align: center;
-  font-size: .9rem;
-  padding: 30px 20px;
-  opacity: .7;
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>Jitsu Cardiff</h1>
-    <p>Japanese Jiu Jitsu in Wales</p>
-  </div>
-</section>
-
-<div class="container">
-
+<SiteLayout
+  title="Jitsu Wales | Japanese Jiu Jitsu"
+  heading="Jitsu Wales"
+  subtitle="Japanese Jiu Jitsu in Wales"
+  description="Discover Japanese Jiu Jitsu in Wales, find your local club and explore regional and national events."
+>
   <p class="lead">
-    Friendly, structured classes focused on practical self-defence, fitness,
-    and progression. Beginners always welcome.
+    Discover Japanese Jiu Jitsu: a martial art that develops practical
+    self-defence skills, fitness and confidence. Find a club in Wales and
+    take your first step onto the mat.
   </p>
 
-  <!-- TEXT SECTIONS -->
   <div class="grid">
-
-    <div class="card">
-      <h2>When</h2>
-      <ul>
-        <li>Wednesdays 7.00-8.30pm</li>
-        <li>Saturdays 5.30-7.00pm</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Where</h2>
-      <ul>
-        <li>Sport Wales National Centre, Sophia Gardens, Cardiff CF11 9SW</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- EMBEDS -->
-  <div class="grid" style="margin-top: 24px; margin-bottom: 24px;">
-
-    <div class="card">
-      <h2>Class Schedule</h2>
-      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FLondon&showPrint=0&title=Cardiff%20Jitsu%20Club%20training%20times&hl=en_GB&showTz=0&showCalendars=0&showTabs=0&src=Y2FyZGlmZmppdHN1Y2x1YkBnbWFpbC5jb20&src=NzY2NDQyODMwZTgxN2I0N2MxMjg5ZTk0ZTI0NGYzN2ExNWE3YzQ3ZGMxNGVmMzI3MDAyOWJmZWE3MzNmMTM0ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23cc003c&color=%238E24AA"></iframe>
-    </div>
-
-    <div class="card">
-      <h2>Location</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.492274216916!2d-3.193130523034548!3d51.48583327180841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486e1ca6c0340f07%3A0xfc485e8a14d53c4!2sSport%20Wales%20National%20Centre!5e0!3m2!1sen!2suk!4v1743847898759!5m2!1sen!2suk"></iframe>
-    </div>
-
-  </div>
-
-  <!-- TEXT SECTIONS -->
-  <div class="grid">
-
-    <div class="card">
+    <section class="card">
       <h2>What is Jiu Jitsu?</h2>
       <p>
-        Jiu Jitsu is a Japanese martial art that is great for self-defence and confidence. It uses combinations of blocks, strikes, locks, and throws to provide practical defences against real-life situations.
+        Jiu Jitsu is a Japanese martial art that uses combinations of blocks,
+        strikes, locks and throws. Training focuses on practical self-defence,
+        with techniques taught through structured practice with a partner.
       </p>
-    </div>
-
-    <div class="card">
-      <h2>Is this Brazilian Jiu Jitsu (BJJ)?</h2>
       <p>
-        No. Jiu Jitsu has entered mainstream awareness in recent years primarily through promotion of Gracie, or Brazilian Jiu Jitsu, which is a martial art and combat sport that focuses on grappling and ground fighting. Our style, Japanese Jiu Jitsu, is focused on self defence from a variety of dangerous situations, such as attacks from punches, kicks, strangles and grabs, and from weapons such as bottles, sticks, and knives.
+        You will learn defences against unarmed attackers and attackers armed
+        with weapons such as knives, sticks and bottles, including situations
+        involving multiple attackers.
       </p>
-    </div>
-
-    <div class="card">
-      <h2>How much does it cost?</h2>
-      <p>
-        The club is not-for-profit and all instructors are volunteers. Your first two weeks are free, after that the club subscription is £15/month allowing training at both the Wednesday and Saturday sessions. You will also need a license from our parent body, The Jiu Jitsu Foundation, which costs £38/year for adults and £24/year for juniors (two weeks free, no upfront payment).
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>What should I wear?</h2>
-      <p>
-        For your first few sessions you can wear track suit bottoms and a long-sleeve t-shirt. If you decide to continue training, then you will need a training suit, called a gi. It is usually cheaper to buy one from the club. Please also bring a pair of flip-flops or sandals for when you are not on the mat.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>What age?</h2>
-      <p>
-        Children 6+ and adults. <br>We have a large dojo and multiple instructors so junior and adult sessions run side-by-side. <br>Learn Jiu Jitsu at the same time as your children!
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Is it full contact?</h2>
-      <p>
-        Yes and no. <br>We train together, so there is contact. But we train cooperatively, not competitively. One person (or persons!) will play the role of attacker, the other defends and practices a technique which the instructor will have just demonstrated. Roles then swap, and it is the other person’s turn to have a go. <br>At various times (especially in gradings) you will be put under pressure in order to test your abilities in ‘real life’ scenarios (while still ensuring everyone’s safety).
-      </p>
-    </div>
-
-  </div>
-  
-  <div class="grid" style="margin-top: 24px; margin-bottom: 24px;">
-
-    <div class="card">
-      <h2>More info</h2>
-      <p>
-        See <a href="https://www.jitsufoundation.org" target="_blank">The Jiu Jitsu Foundation</a> website.
-      </p>
-    </div>
-
-  </div>
-  
-  <!-- CONTACT / SOCIAL -->
-  <div class="links">
-    <a href="mailto:cardiffjitsuclub@gmail.com?subject=Jiu Jitsu enquiry">Email</a>
-    <a href="https://www.facebook.com/cardiffjitsu" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/cardiffjitsu/" target="_blank">Instagram</a>
-    <a href="https://jitsu.wales/events/" target="_blank">Events</a>
+    </section>
   </div>
 
-</div>
+  <section class="section" id="clubs" aria-labelledby="clubs-heading">
+    <div class="section-heading">
+      <h2 id="clubs-heading">Find your club</h2>
+      <p>Explore training times, locations and how to get started. More club details are coming soon.</p>
+    </div>
+    <div class="grid">
+      {clubs.map((club) => (
+        <article class="card club-card">
+          <h3>{club.name}</h3>
+          {club.href ? (
+            <a class="button" href={club.href}>Explore {club.name}</a>
+          ) : (
+            <span class="status">Details coming soon</span>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
 
-<footer>
-  Cardiff Jiu Jitsu Club is a member of <a href="https://www.jitsufoundation.org" target="_blank">The Jiu Jitsu Foundation</a>
-</footer>
-
-</body>
-</html>
+  <section class="section card" aria-labelledby="events-heading">
+    <h2 id="events-heading">Events across the Jitsu community</h2>
+    <p>See regional and national events in our shared Google Calendar.</p>
+    <a class="button" href="/events/">View events</a>
+  </section>
+</SiteLayout>
