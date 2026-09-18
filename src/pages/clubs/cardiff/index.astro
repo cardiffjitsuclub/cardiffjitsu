@@ -1,42 +1,27 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ClubLayout from '../../../layouts/ClubLayout.astro';
 ---
 
-<SiteLayout
-  title="Cardiff City | Jitsu Wales"
-  heading="Cardiff City"
+<ClubLayout
+  name="Cardiff City Jiu Jitsu Club"
   subtitle="Japanese Jiu Jitsu in Cardiff"
   description="Train with Cardiff City Jiu Jitsu at Sport Wales National Centre. Find training times, fees, beginner information and contact details."
+  when={['Wednesdays 7.00-8.30pm', 'Saturdays 5.30-7.00pm']}
+  where="Sport Wales National Centre, Sophia Gardens, Cardiff CF11 9SW"
+  contacts={[
+    { label: 'Email', href: 'mailto:cardiffjitsuclub@gmail.com?subject=Jiu Jitsu enquiry' },
+    { label: 'Facebook', href: 'https://www.facebook.com/cardiffjitsu', newTab: true },
+    { label: 'Instagram', href: 'https://www.instagram.com/cardiffjitsu/', newTab: true },
+  ]}
 >
 
-
-  <p class="lead">
+  <p slot="intro" class="lead">
     Friendly, structured classes focused on practical self-defence, fitness,
     and progression. Beginners always welcome.
   </p>
 
-  <!-- TEXT SECTIONS -->
-  <div class="grid">
-
-    <div class="card">
-      <h2>When</h2>
-      <ul>
-        <li>Wednesdays 7.00-8.30pm</li>
-        <li>Saturdays 5.30-7.00pm</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Where</h2>
-      <ul>
-        <li>Sport Wales National Centre, Sophia Gardens, Cardiff CF11 9SW</li>
-      </ul>
-    </div>
-
-  </div>
-
   <!-- EMBEDS -->
-  <div class="grid" style="margin-top: 24px; margin-bottom: 24px;">
+  <div slot="after-details" class="grid" style="margin-top: 24px; margin-bottom: 24px;">
 
     <div class="card">
       <h2>Class Schedule</h2>
@@ -51,7 +36,7 @@ import SiteLayout from '../../../layouts/SiteLayout.astro';
   </div>
 
   <!-- TEXT SECTIONS -->
-  <div class="grid">
+  <div slot="before-contact" class="grid">
 
     <div class="card">
       <h2>How much does it cost?</h2>
@@ -83,25 +68,5 @@ import SiteLayout from '../../../layouts/SiteLayout.astro';
 
   </div>
 
-  <div class="grid" style="margin-top: 24px; margin-bottom: 24px;">
-
-    <div class="card">
-      <h2>More info</h2>
-      <p>
-        See <a href="https://www.jitsufoundation.org" target="_blank" rel="noopener noreferrer">The Jiu Jitsu Foundation</a> website.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- CONTACT / SOCIAL -->
-  <div class="links">
-    <a href="mailto:cardiffjitsuclub@gmail.com?subject=Jiu Jitsu enquiry">Email</a>
-    <a href="https://www.facebook.com/cardiffjitsu" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://www.instagram.com/cardiffjitsu/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="/events/">Events</a>
-  </div>
-
-
   <p>Cardiff City Jiu Jitsu Club is a member of <a href="https://www.jitsufoundation.org">The Jiu Jitsu Foundation</a>.</p>
-</SiteLayout>
+</ClubLayout>

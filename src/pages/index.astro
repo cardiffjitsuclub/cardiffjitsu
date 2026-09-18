@@ -34,19 +34,20 @@ import { clubs } from '../data/clubs';
   <section class="section" id="clubs" aria-labelledby="clubs-heading">
     <div class="section-heading">
       <h2 id="clubs-heading">Find your club</h2>
-      <p>Explore training times, locations and how to get started. More club details are coming soon.</p>
+      <p>Explore training times, locations and how to get started.</p>
     </div>
-    <div class="grid">
-      {clubs.map((club) => (
-        <article class="card club-card">
-          <h3>{club.name}</h3>
-          {club.href ? (
-            <a class="button" href={club.href}>Explore {club.name}</a>
-          ) : (
-            <span class="status">Details coming soon</span>
-          )}
-        </article>
-      ))}
+    <div class="card">
+      <ul class="club-list">
+        {clubs.map((club) => (
+          <li>
+            {club.href ? (
+              <a class="button" href={club.href}>{club.name}</a>
+            ) : (
+              <span class="status">{club.name} — Details coming soon</span>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
