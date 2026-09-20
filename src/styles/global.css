@@ -17,12 +17,18 @@ body {
   position: relative;
   height: 50vh;
   min-height: 320px;
-  background: var(--hero-image) center/cover no-repeat;
+  background: var(--hero-image-mobile, var(--hero-image)) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  .hero {
+    background-image: var(--hero-image);
+  }
 }
 
 .hero::after {

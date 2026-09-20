@@ -6,6 +6,7 @@ interface Props {
   subtitle?: string;
   description?: string;
   heroImage?: string;
+  heroImageMobile?: string;
   when?: string[];
   where?: string;
   contacts?: { label: string; href: string; newTab?: boolean }[];
@@ -16,6 +17,7 @@ const {
   subtitle = 'Japanese Jiu Jitsu in Wales',
   description = `Jiu Jitsu training times, location and contact information for ${name}.`,
   heroImage,
+  heroImageMobile,
   when,
   where,
   contacts = [],
@@ -28,6 +30,7 @@ const {
   subtitle={subtitle}
   description={description}
   heroImage={heroImage}
+  heroImageMobile={heroImageMobile}
 >
   <slot name="intro" />
 
