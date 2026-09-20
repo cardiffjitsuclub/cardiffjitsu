@@ -7,6 +7,8 @@ interface Props {
   description?: string;
   heroImage?: string;
   heroImageMobile?: string;
+  shareImage?: string;
+  shareImageAlt?: string;
   when?: string[];
   where?: string;
   contacts?: { label: string; href: string; newTab?: boolean }[];
@@ -18,6 +20,8 @@ const {
   description = `Jiu Jitsu training times, location and contact information for ${name}.`,
   heroImage,
   heroImageMobile,
+  shareImage,
+  shareImageAlt,
   when,
   where,
   contacts = [],
@@ -31,6 +35,8 @@ const {
   description={description}
   heroImage={heroImage}
   heroImageMobile={heroImageMobile}
+  shareImage={shareImage}
+  shareImageAlt={shareImageAlt}
 >
   <slot name="intro" />
 
