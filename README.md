@@ -119,6 +119,13 @@ Their original PNG and JPEG files remain in `public/` as source assets.
 When replacing either image, create both WebP sizes and check the hero crop at
 mobile and desktop widths before publishing.
 
+## Social sharing previews
+
+`SiteLayout` creates Open Graph and Twitter card metadata using each page's
+title, description and canonical URL. The default share image is
+`public/share-image.jpg`; pages can pass `shareImage` and `shareImageAlt` to
+use a page-specific image. The Events page uses `public/events/share-image.jpg`.
+
 ## Making a change
 
 1. Switch to main and pull the latest changes.

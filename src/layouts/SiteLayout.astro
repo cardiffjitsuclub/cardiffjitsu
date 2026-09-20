@@ -8,6 +8,8 @@ interface Props {
   subtitle?: string;
   heroImage?: string;
   heroImageMobile?: string;
+  shareImage?: string;
+  shareImageAlt?: string;
 }
 const {
   title,
@@ -16,9 +18,12 @@ const {
   subtitle,
   heroImage = '/image.jpg',
   heroImageMobile,
+  shareImage = '/share-image.jpg',
+  shareImageAlt = 'Jitsu Wales Japanese Jiu Jitsu training',
 } = Astro.props;
 const pathname = Astro.url.pathname;
 const canonicalURL = new URL(`${pathname.replace(/\/+$/, '')}/`, Astro.site);
+const shareImageURL = new URL(shareImage, Astro.site);
 ---
 
 <!doctype html>
@@ -28,6 +33,18 @@ const canonicalURL = new URL(`${pathname.replace(/\/+$/, '')}/`, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jitsu Wales" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={shareImageURL} />
+    <meta property="og:image:alt" content={shareImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareImageURL} />
+    <meta name="twitter:image:alt" content={shareImageAlt} />
     <title>{title}</title>
   </head>
   <body>
