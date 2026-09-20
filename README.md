@@ -111,6 +111,14 @@ After building, check these files and the canonical links in `dist/**/*.html`.
 After publishing, verify `/robots.txt`, `/sitemap-index.xml`, `/sitemap-0.xml`
 and the canonical link in each live page's source.
 
+## Images
+
+The home and Events hero images use responsive WebP files: a smaller mobile
+version is used below 700px and a larger desktop version above that width.
+Their original PNG and JPEG files remain in `public/` as source assets.
+When replacing either image, create both WebP sizes and check the hero crop at
+mobile and desktop widths before publishing.
+
 ## Making a change
 
 1. Switch to main and pull the latest changes.

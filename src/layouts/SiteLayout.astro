@@ -7,8 +7,16 @@ interface Props {
   description: string;
   subtitle?: string;
   heroImage?: string;
+  heroImageMobile?: string;
 }
-const { title, heading, description, subtitle, heroImage = '/image.jpg' } = Astro.props;
+const {
+  title,
+  heading,
+  description,
+  subtitle,
+  heroImage = '/image.jpg',
+  heroImageMobile,
+} = Astro.props;
 const pathname = Astro.url.pathname;
 const canonicalURL = new URL(`${pathname.replace(/\/+$/, '')}/`, Astro.site);
 ---
@@ -35,7 +43,14 @@ const canonicalURL = new URL(`${pathname.replace(/\/+$/, '')}/`, Astro.site);
       </nav>
     </header>
     <main id="main-content">
-      <section class="hero" style={{ '--hero-image': `url("${heroImage}")` }} aria-labelledby="page-heading">
+      <section
+        class="hero"
+        style={{
+          '--hero-image': `url("${heroImage}")`,
+          '--hero-image-mobile': heroImageMobile ? `url("${heroImageMobile}")` : undefined,
+        }}
+        aria-labelledby="page-heading"
+      >
         <div class="hero-content">
           <h1 id="page-heading">{heading}</h1>
           {subtitle && <p>{subtitle}</p>}
