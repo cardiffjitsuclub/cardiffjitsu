@@ -98,6 +98,19 @@ For example:
 Slots add no surrounding markup or spacing. Use the shared `section`, `card`
 and `grid` classes as needed. Cardiff City's page demonstrates all four slots.
 
+## Search engine discovery
+
+`astro.config.mjs` defines the public URL as `https://jitsu.wales`.
+The sitemap integration automatically includes the site's pages on each build,
+producing `dist/sitemap-index.xml` and `dist/sitemap-0.xml`.
+`src/pages/robots.txt.ts` generates a crawler-friendly `robots.txt` linking to the
+sitemap. `SiteLayout` gives every page its own absolute canonical URL (preferred
+search-engine address), using the same public domain and trailing slash.
+
+After building, check these files and the canonical links in `dist/**/*.html`.
+After publishing, verify `/robots.txt`, `/sitemap-index.xml`, `/sitemap-0.xml`
+and the canonical link in each live page's source.
+
 ## Making a change
 
 1. Switch to main and pull the latest changes.
