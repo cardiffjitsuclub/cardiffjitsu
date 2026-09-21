@@ -5,9 +5,90 @@ import ClubLayout from '../../../layouts/ClubLayout.astro';
 <ClubLayout
   name="Cardiff University Jiu Jitsu Club"
   description="Japanese Jiu Jitsu training at Cardiff University’s Talybont Sports Centre, with sessions on Monday, Wednesday and Thursday evenings."
+  heroImage="/clubs/cardiff-university.webp"
+  heroImageMobile="/clubs/cardiff-university-mobile.webp"
   when={['Mondays 5.30-7.30pm', 'Wednesdays 7.30-9.30pm', 'Thursdays 7.30-9.30pm']}
   where="South Hall, Cardiff University, Talybont Sports Centre, 12 Bevan Place, Cardiff, CF14 3UX"
   contacts={[
-    { label: 'Instagram', href: 'https://www.instagram.com/jitsu.cardiffuni/' },
+    { label: 'Instagram: jitsu.cardiffuni', href: 'https://www.instagram.com/jitsu.cardiffuni/', newTab: true },
+    { label: 'Email', href: 'mailto:jiujitsu@cardiff.ac.uk' },
   ]}
-/>
+>
+  <div slot="before-contact" class="section grid">
+    <section class="card">
+      <h2>Your first session</h2>
+      <p>
+        If you are interested in trying out, we recommend arriving 10–15
+        minutes early.
+      </p>
+      <p>
+        If you have any questions or want to see what we do, have a look at
+        our <a href="https://www.instagram.com/jitsu.cardiffuni/" target="_blank" rel="noopener noreferrer">Instagram page</a>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Arriving at the dojo</h2>
+      <p>
+        To access the changing rooms, go up the stairs in front of reception.
+      </p>
+      <p>
+        To find us, turn left from reception and follow the corridor to South
+        Hall. We usually train on court 4 or 5; the court numbers are on the
+        wall.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Costs and trial sessions</h2>
+      <p>Your first three sessions with us are free. After that, mat-fee plans are:</p>
+      <ul>
+        <li>£60 — full year</li>
+        <li>£45 — academic year</li>
+        <li>£25 — half year</li>
+        <li>£12.50 — quarter year</li>
+        <li>£2 — individual session</li>
+      </ul>
+      <p>
+        You will also need a licence from our Association, The Jiu Jitsu
+        Foundation, which costs £38/year. There is no upfront payment during
+        the first two weeks.
+      </p>
+      <p>
+        As we are a University Society, Cardiff University students who wish
+        to make us their home club need an AU membership, which costs
+        £32.50/year. To purchase an Associate Membership, contact us through
+        Instagram or email.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What should I wear?</h2>
+      <p>
+        For your first few sessions, wear comfortable clothing such as joggers
+        and a T-shirt. We train barefoot, although you may wear socks if you
+        prefer. Afterwards, you can purchase a gi, our training suit.
+      </p>
+      <p>
+        Remove or cover all jewellery, tie up long hair and bring a water
+        bottle. Free refill stations are available.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Who can attend?</h2>
+      <p>
+        Most of our members are students, but you do not have to be. We also
+        welcome students from other universities.
+      </p>
+      <p>
+        If you are under 18 and would like to attend, please contact us before
+        coming along.
+      </p>
+      <p>
+        TJJF members who already have a home club may attend our sessions as
+        long as they pay mat fees. No membership with us is needed.
+      </p>
+    </section>
+  </div>
+</ClubLayout>
