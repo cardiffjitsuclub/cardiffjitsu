@@ -11,7 +11,7 @@ interface Props {
   shareImageAlt?: string;
   when?: string[];
   where?: string;
-  contacts?: { label: string; href: string; newTab?: boolean }[];
+  contacts?: { label: string; href: string; newTab?: boolean; officialProfile?: boolean }[];
 }
 
 const {
@@ -26,6 +26,9 @@ const {
   where,
   contacts = [],
 } = Astro.props;
+const emailLink = contacts.find(({ href }) => href.startsWith('mailto:'));
+const telephoneLink = contacts.find(({ href }) => href.startsWith('tel:'));
+const profiles = contacts.filter(({ officialProfile }) => officialProfile).map(({ href }) => href);
 ---
 
 <SiteLayout
@@ -37,6 +40,14 @@ const {
   heroImageMobile={heroImageMobile}
   shareImage={shareImage}
   shareImageAlt={shareImageAlt}
+  organization={{
+    '@type': 'SportsOrganization',
+    sport: 'Japanese Jiu Jitsu',
+    location: where ? { '@type': 'Place', address: where } : undefined,
+    email: emailLink ? new URL(emailLink.href).pathname : undefined,
+    telephone: telephoneLink ? new URL(telephoneLink.href).pathname : undefined,
+    sameAs: profiles.length ? profiles : undefined,
+  }}
 >
   <slot name="intro" />
 
