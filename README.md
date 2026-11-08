@@ -111,6 +111,17 @@ After building, check these files and the canonical links in `dist/**/*.html`.
 After publishing, verify `/robots.txt`, `/sitemap-index.xml`, `/sitemap-0.xml`
 and the canonical link in each live page's source.
 
+The home page describes Jitsu Wales as a Schema.org `Organization`. Club pages
+use `SportsOrganization` and reuse their visible venue and contact details.
+Set `officialProfile: true` only on links that identify the club itself, not
+on group invitations or shared community links. Training venues are locations;
+the markup does not describe them as club-owned businesses.
+
+After editing these details, check the generated JSON-LD against the visible
+page and validate it with the [Schema Markup Validator](https://validator.schema.org/).
+Google's [Rich Results Test](https://search.google.com/test/rich-results) checks
+Google-supported features. Valid markup does not guarantee enhanced results.
+
 ## Images
 
 The home and Events hero images use responsive WebP files: a smaller mobile
